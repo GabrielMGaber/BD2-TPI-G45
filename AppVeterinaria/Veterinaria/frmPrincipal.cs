@@ -30,5 +30,11 @@ namespace Veterinaria
                 MessageBox.Show("No se pudieron cargar los medicamentos: " + ex.Message);
             }
         }
+
+        private void btnVistas_Click(object sender, EventArgs e)
+        {
+            frmVistas ventana = new frmVistas();
+            ventana.ShowDialog();
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Veterinaria.Negocio
 {
@@ -70,7 +71,22 @@ namespace Veterinaria.Negocio
                 throw ex;
             }
         }
+        public DataTable obtenerTabla()
+        {
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion;
 
+            try
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void cerrarConexion()
         {
             if (lector != null)

@@ -46,19 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Mascota.cs" />
     <Compile Include="Dominio\Medicamento.cs" />
+    <Compile Include="Dominio\Veterinario.cs" />
+    <Compile Include="Negocio\VistaNegocio.cs" />
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistas.Designer.cs">
+      <DependentUpon>frmVistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\AccesoDatos.cs" />
+    <Compile Include="Negocio\MascotaNegocio.cs" />
     <Compile Include="Negocio\MedicamentoNegocio.cs" />
+    <Compile Include="Negocio\VeterinarioNegocio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistas.resx">
+      <DependentUpon>frmVistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
