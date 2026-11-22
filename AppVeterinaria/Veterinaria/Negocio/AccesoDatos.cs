@@ -87,6 +87,23 @@ namespace Veterinaria.Negocio
                 throw ex;
             }
         }
+        public DataSet obtenerDataSet()
+        {
+            DataSet conjunto = new DataSet();
+            comando.Connection = conexion;
+
+            try
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(conjunto);
+                return conjunto;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+       
         public void cerrarConexion()
         {
             if (lector != null)
