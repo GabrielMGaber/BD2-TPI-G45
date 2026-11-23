@@ -13,13 +13,17 @@ namespace Veterinaria.Negocio
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-
+        private string mensajes;
         public SqlDataReader Lector
         {
             get { return lector; }
         }
+        public string Mensajes
+        {
+            get { return mensajes; }
+        }
 
-        public AccesoDatos()
+public AccesoDatos()
         {
             conexion = new SqlConnection("server=.\\SQLEXPRESS; database=TPI_Grupo45_Veterinaria; integrated security=true");
             comando = new SqlCommand();
@@ -103,8 +107,26 @@ namespace Veterinaria.Negocio
                 throw ex;
             }
         }
-       
-        public void cerrarConexion()
+        public object ejecutarEscalar()
+        {
+            comando.Connection = conexion;
+            mensajes = "";
+
+            // Los PRINT del procedimiento no llegan como error:
+            // la conexion los avisa con el evento InfoMessage y los juntamos aca.
+            conexion.InfoMessage += (sender, e) => mensajes += e.Message;
+
+            try
+            {
+                conexion.Open();
+                return comando.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+       public void cerrarConexion()
         {
             if (lector != null)
                 lector.Close();

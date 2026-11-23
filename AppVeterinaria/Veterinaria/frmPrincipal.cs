@@ -41,5 +41,11 @@ namespace Veterinaria
             frmHistorial ventana = new frmHistorial();
             ventana.ShowDialog();
         }
-}
+
+        private void btnNuevaConsulta_Click(object sender, EventArgs e)
+        {
+            frmNuevaConsulta ventana = new frmNuevaConsulta();
+            ventana.ShowDialog();
+        }
+    }
 }
