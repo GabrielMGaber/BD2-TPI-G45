@@ -32,6 +32,7 @@
             this.btnVistas = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.btnNuevaConsulta = new System.Windows.Forms.Button();
+            this.btnRecetas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             // btnVistas
             // 
-            this.btnVistas.Location = new System.Drawing.Point(206, 264);
+            this.btnVistas.Location = new System.Drawing.Point(111, 263);
             this.btnVistas.Name = "btnVistas";
             this.btnVistas.Size = new System.Drawing.Size(75, 23);
             this.btnVistas.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btnHistorial
             // 
-            this.btnHistorial.Location = new System.Drawing.Point(305, 264);
+            this.btnHistorial.Location = new System.Drawing.Point(206, 264);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(174, 23);
             this.btnHistorial.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // btnNuevaConsulta
             // 
-            this.btnNuevaConsulta.Location = new System.Drawing.Point(497, 263);
+            this.btnNuevaConsulta.Location = new System.Drawing.Point(604, 264);
             this.btnNuevaConsulta.Name = "btnNuevaConsulta";
             this.btnNuevaConsulta.Size = new System.Drawing.Size(102, 24);
             this.btnNuevaConsulta.TabIndex = 3;
@@ -73,11 +74,22 @@
             this.btnNuevaConsulta.UseVisualStyleBackColor = true;
             this.btnNuevaConsulta.Click += new System.EventHandler(this.btnNuevaConsulta_Click);
             // 
+            // btnRecetas
+            // 
+            this.btnRecetas.Location = new System.Drawing.Point(408, 264);
+            this.btnRecetas.Name = "btnRecetas";
+            this.btnRecetas.Size = new System.Drawing.Size(174, 23);
+            this.btnRecetas.TabIndex = 4;
+            this.btnRecetas.Text = "Recetar medicamentos";
+            this.btnRecetas.UseVisualStyleBackColor = true;
+            this.btnRecetas.Click += new System.EventHandler(this.btnRecetas_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRecetas);
             this.Controls.Add(this.btnNuevaConsulta);
             this.Controls.Add(this.btnHistorial);
             this.Controls.Add(this.btnVistas);
@@ -96,6 +108,7 @@
         private System.Windows.Forms.Button btnVistas;
         private System.Windows.Forms.Button btnHistorial;
         private System.Windows.Forms.Button btnNuevaConsulta;
+        private System.Windows.Forms.Button btnRecetas;
     }
 }
 

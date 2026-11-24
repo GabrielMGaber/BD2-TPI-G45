@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\Consulta.cs" />
+    <Compile Include="Dominio\DetalleConsulta.cs" />
     <Compile Include="Dominio\Mascota.cs" />
     <Compile Include="Dominio\Medicamento.cs" />
     <Compile Include="Dominio\Veterinario.cs" />
@@ -62,7 +63,14 @@
     <Compile Include="frmNuevaConsulta.Designer.cs">
       <DependentUpon>frmNuevaConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecetas.Designer.cs">
+      <DependentUpon>frmRecetas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\ConsultaNegocio.cs" />
+    <Compile Include="Negocio\DetalleConsultaNegocio.cs" />
     <Compile Include="Negocio\HistorialNegocio.cs" />
     <Compile Include="Negocio\VistaNegocio.cs" />
     <Compile Include="frmPrincipal.cs">
@@ -85,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecetas.resx">
+      <DependentUpon>frmRecetas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistas.resx">
       <DependentUpon>frmVistas.cs</DependentUpon>

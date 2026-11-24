@@ -15,5 +15,9 @@ namespace Veterinaria.Dominio
         public string Motivo { get; set; }
         public string Diagnostico { get; set; }
         public string Observaciones { get; set; }
+        public override string ToString()
+        {
+            return "N° " + Id + " - " + Mascota.Nombre + " - " + Fecha.ToShortDateString();
+        }
     }
 }

@@ -9,6 +9,41 @@ namespace Veterinaria.Negocio
 {
     public class ConsultaNegocio
     {
+        public List<Consulta> listar()
+        {
+            {
+                List<Consulta> lista = new List<Consulta>();
+                AccesoDatos datos = new AccesoDatos();
+
+                try
+                {
+                    datos.setearConsulta("SELECT C.IdConsulta, C.Fecha, M.IdMascota, M.Nombre FROM Consultas C INNER JOIN Mascotas M ON M.IdMascota = C.IdMascota ORDER BY C.Fecha DESC");
+                    datos.ejecutarLectura();
+
+                    while (datos.Lector.Read())
+                    {
+                        Consulta aux = new Consulta();
+                        aux.Id = (int)datos.Lector["IdConsulta"];
+                        aux.Fecha = (DateTime)datos.Lector["Fecha"];
+                        aux.Mascota = new Mascota();
+                        aux.Mascota.Id = (int)datos.Lector["IdMascota"];
+                        aux.Mascota.Nombre = (string)datos.Lector["Nombre"];
+
+                        lista.Add(aux);
+                    }
+
+                    return lista;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+            }
+        }
         public int registrar(Consulta nueva)
         {
             AccesoDatos datos = new AccesoDatos();

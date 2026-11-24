@@ -47,5 +47,11 @@ namespace Veterinaria
             frmNuevaConsulta ventana = new frmNuevaConsulta();
             ventana.ShowDialog();
         }
+
+        private void btnRecetas_Click(object sender, EventArgs e)
+        {
+            frmRecetas ventana = new frmRecetas();
+            ventana.ShowDialog();
+        }
     }
 }
